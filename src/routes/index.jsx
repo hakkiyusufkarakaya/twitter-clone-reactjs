@@ -6,6 +6,7 @@ import MainLayout from "../layout/main/index.jsx";
 import Messages from "../pages/messages/index.jsx";
 import Lists from "../pages/lists/index.jsx";
 import Profile from "../pages/profile/index.jsx";
+import Error from "../pages/error/index.jsx";
 
 const routes = createBrowserRouter([
     {
@@ -33,9 +34,13 @@ const routes = createBrowserRouter([
                 element: <Lists />
             },
             {
-                path: 'profile',
+                path: ':slug',
                 element: <Profile />
             },
+            {
+                path: '*',
+                element: <Error />
+            }
         ]
     },
 
